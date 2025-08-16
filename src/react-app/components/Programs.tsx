@@ -1,12 +1,11 @@
-import React from "react";
+import { Button } from "./ui/button";
 import {
   Card,
+  CardContent,
+  CardDescription,
   CardHeader,
   CardTitle,
-  CardDescription,
-  CardContent,
 } from "./ui/card";
-import { Button } from "./ui/button";
 
 const Programs = () => {
   const phases = [

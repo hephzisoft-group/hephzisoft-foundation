@@ -1,6 +1,5 @@
-import React from 'react';
-import { Card, CardContent } from '../components/ui/card';
-import { Button } from '../components/ui/button';
+import { Button } from "../components/ui/button";
+import { Card, CardContent } from "../components/ui/card";
 
 const Contact = () => {
   return (
@@ -25,25 +24,25 @@ const Contact = () => {
               </h3>
               <form className="space-y-4">
                 <div className="grid md:grid-cols-2 gap-4">
-                  <input 
-                    type="text" 
-                    placeholder="First Name" 
+                  <input
+                    type="text"
+                    placeholder="First Name"
                     className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-hope-blue focus:border-transparent"
                   />
-                  <input 
-                    type="text" 
-                    placeholder="Last Name" 
+                  <input
+                    type="text"
+                    placeholder="Last Name"
                     className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-hope-blue focus:border-transparent"
                   />
                 </div>
-                <input 
-                  type="email" 
-                  placeholder="Email" 
+                <input
+                  type="email"
+                  placeholder="Email"
                   className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-hope-blue focus:border-transparent"
                 />
-                <textarea 
-                  rows={4} 
-                  placeholder="Message" 
+                <textarea
+                  rows={4}
+                  placeholder="Message"
                   className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-hope-blue focus:border-transparent"
                 />
                 <Button variant="hope" size="lg" className="w-full">
@@ -61,7 +60,9 @@ const Contact = () => {
                   Seoul Office
                 </h3>
                 <div className="space-y-2 text-charcoal-gray/70">
-                  <p className="font-noto-serif-kr text-emerald-growth">서울 본부</p>
+                  <p className="font-noto-serif-kr text-emerald-growth">
+                    서울 본부
+                  </p>
                   <p>Seoul, South Korea</p>
                   <p>info@hephzisoftfoundation.org</p>
                   <p>+82 (0)2 XXXX XXXX</p>

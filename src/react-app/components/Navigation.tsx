@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import { Button } from './ui/button';
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { Button } from "./ui/button";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -11,25 +11,25 @@ const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/', korean: '홈' },
-    { name: 'Our Story', href: '/our-story', korean: '우리 이야기' },
-    { name: 'Programs', href: '/programs', korean: '프로그램' },
-    { name: 'Get Involved', href: '/get-involved', korean: '참여하기' },
-    { name: 'Blog', href: '/blog', korean: '블로그' },
-    { name: 'Contact', href: '/contact', korean: '연락처' },
+    { name: "Home", href: "/", korean: "홈" },
+    { name: "Our Story", href: "/our-story", korean: "우리 이야기" },
+    { name: "Programs", href: "/programs", korean: "프로그램" },
+    { name: "Get Involved", href: "/get-involved", korean: "참여하기" },
+    { name: "Blog", href: "/blog", korean: "블로그" },
+    { name: "Contact", href: "/contact", korean: "연락처" },
   ];
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-sm shadow-lg hanok-border' 
-          : 'bg-transparent'
+        isScrolled
+          ? "bg-white/95 backdrop-blur-sm shadow-lg hanok-border"
+          : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,8 +60,8 @@ const Navigation = () => {
                 to={item.href}
                 className={`group relative px-3 py-2 text-sm font-medium transition-colors ${
                   location.pathname === item.href
-                    ? 'text-hope-blue'
-                    : 'text-charcoal-gray hover:text-hope-blue'
+                    ? "text-hope-blue"
+                    : "text-charcoal-gray hover:text-hope-blue"
                 }`}
               >
                 <span className="font-sora">{item.name}</span>
@@ -129,8 +129,8 @@ const Navigation = () => {
                 onClick={() => setIsMobileMenuOpen(false)}
                 className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
                   location.pathname === item.href
-                    ? 'text-hope-blue bg-hope-blue/10'
-                    : 'text-charcoal-gray hover:text-hope-blue hover:bg-hope-blue/5'
+                    ? "text-hope-blue bg-hope-blue/10"
+                    : "text-charcoal-gray hover:text-hope-blue hover:bg-hope-blue/5"
                 }`}
               >
                 <div className="font-sora">{item.name}</div>

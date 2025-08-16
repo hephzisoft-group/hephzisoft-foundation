@@ -1,5 +1,3 @@
-import React from 'react';
-
 const OurStory = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-soft-grey to-hope-blue/3 py-20">
@@ -13,8 +11,10 @@ const OurStory = () => {
         </p>
         <div className="bg-card p-8 rounded-2xl korean-shadow">
           <p className="text-lg text-charcoal-gray/80 leading-relaxed">
-            The founder's story of emotional transformation, brand vision, and cultural inspiration behind the logo will be featured here. 
-            This page will showcase the journey from personal struggle to creating a global foundation that empowers youth.
+            The founder's story of emotional transformation, brand vision, and
+            cultural inspiration behind the logo will be featured here. This
+            page will showcase the journey from personal struggle to creating a
+            global foundation that empowers youth.
           </p>
         </div>
       </div>
