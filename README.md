@@ -1,90 +1,130 @@
-# React + Vite + Hono + Cloudflare Workers
+# Hephzisoft Foundation Website
+**Empowering Youth to Rise** | **청년의 성장과 자유를 위하여**
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/cloudflare/templates/tree/main/vite-react-template)
+A beautiful, culturally-rooted nonprofit website for Hephzisoft Foundation - a global organization headquartered in South Korea that empowers emotionally and socially isolated youth (ages 15–25) to discover purpose, build confidence, and achieve financial freedom.
 
-This template provides a minimal setup for building a React application with TypeScript and Vite, designed to run on Cloudflare Workers. It features hot module replacement, ESLint integration, and the flexibility of Workers deployments.
+## 🌟 Design Features
 
-![React + TypeScript + Vite + Cloudflare Workers](https://imagedelivery.net/wSMYJvS3Xw-n339CbDyDIA/fc7b4b62-442b-4769-641b-ad4422d74300/public)
+### Visual Identity
+- **Korean Minimalism** with modern, soft, and hopeful aesthetics
+- **Phoenix rising from lotus** logo concept with hanok-inspired roofline
+- **Cultural Integration** with bilingual English/Korean content throughout
 
-<!-- dash-content-start -->
+### Color Palette
+- **Hope Blue** (#A6D6F2) – optimism and calm
+- **Emerald Growth** (#4BBFA5) – healing and development  
+- **Soft Orchid** (#C8A2C8) – emotional depth
+- **Golden Light** (#F4C95D) – purpose and confidence
+- **Charcoal Gray** (#333333) – stability and professionalism
 
-🚀 Supercharge your web development with this powerful stack:
+### Typography
+- **Primary**: Sora (headers, buttons, UI elements)
+- **Accent**: Noto Serif KR (Korean/English storytelling content)
 
-- [**React**](https://react.dev/) - A modern UI library for building interactive interfaces
-- [**Vite**](https://vite.dev/) - Lightning-fast build tooling and development server
-- [**Hono**](https://hono.dev/) - Ultralight, modern backend framework
-- [**Cloudflare Workers**](https://developers.cloudflare.com/workers/) - Edge computing platform for global deployment
+## 🚀 Technology Stack
 
-### ✨ Key Features
+- **React 18** with TypeScript
+- **Vite** for fast development and building
+- **TailwindCSS 3.4.17** for styling
+- **Shadcn UI** components for consistent design
+- **React Router** for navigation
+- **Korean Web Fonts** (Google Fonts)
 
-- 🔥 Hot Module Replacement (HMR) for rapid development
-- 📦 TypeScript support out of the box
-- 🛠️ ESLint configuration included
-- ⚡ Zero-config deployment to Cloudflare's global network
-- 🎯 API routes with Hono's elegant routing
-- 🔄 Full-stack development setup
-- 🔎 Built-in Observability to monitor your Worker
+## 📱 Pages Structure
 
-Get started in minutes with local development or deploy directly via the Cloudflare dashboard. Perfect for building modern, performant web applications at the edge.
+1. **Home** - Inspiring hero with 4-phase empowerment model
+2. **Our Story** - Founder's journey and cultural inspiration
+3. **Programs** - Detailed breakdown of transformation phases
+4. **Get Involved** - Volunteer, mentor, and sponsorship opportunities
+5. **Blog/Insights** - Impact stories and youth spotlights
+6. **Contact** - Multilingual support and Seoul office information
 
-<!-- dash-content-end -->
+## 🌍 4-Phase Empowerment Model
 
-## Getting Started
+1. **Self-Discovery** (자아 발견) - 3-6 months
+2. **Worldview Shift** (세계관 전환) - 2-4 months  
+3. **Mindset Shift** (사고방식 변화) - 4-6 months
+4. **Money Mastery** (경제적 자립) - 6-12 months
 
-To start a new project with this template, run:
+## 🛠️ Setup Instructions
 
-```bash
-npm create cloudflare@latest -- --template=cloudflare/templates/vite-react-template
-```
+### Prerequisites
+- Node.js 18+ 
+- npm or yarn
 
-A live deployment of this template is available at:
-[https://react-vite-template.templates.workers.dev](https://react-vite-template.templates.workers.dev)
+### Installation
 
-## Development
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd hephzisoft-foundation
+   ```
 
-Install dependencies:
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-```bash
-npm install
-```
+3. **Start development server**
+   ```bash
+   npm run dev
+   ```
 
-Start the development server with:
+4. **Open in browser**
+   ```
+   http://localhost:5173
+   ```
 
-```bash
-npm run dev
-```
-
-Your application will be available at [http://localhost:5173](http://localhost:5173).
-
-## Production
-
-Build your project for production:
+### Build for Production
 
 ```bash
 npm run build
-```
-
-Preview your build locally:
-
-```bash
 npm run preview
 ```
 
-Deploy your project to Cloudflare Workers:
+## 🎨 Custom Features
 
-```bash
-npm run build && npm run deploy
-```
+### Korean-Inspired Components
+- **Hanok Border** - Traditional roofline styling for navigation
+- **Korean Shadow** - Soft, minimalistic shadows
+- **Phoenix Animation** - Rising animation on scroll
+- **Cultural Typography** - Seamless Korean/English integration
 
-Monitor your workers:
+### Responsive Design
+- Mobile-first approach
+- Optimized for all devices
+- Touch-friendly navigation
+- Accessible design patterns
 
-```bash
-npx wrangler tail
-```
+### Performance Optimizations
+- Lightweight animations
+- Lazy loading components  
+- Optimized font loading
+- SEO-ready meta tags
 
-## Additional Resources
+## 🌐 Accessibility & SEO
 
-- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
-- [Vite Documentation](https://vitejs.dev/guide/)
-- [React Documentation](https://reactjs.org/)
-- [Hono Documentation](https://hono.dev/)
+- **WCAG 2.1 AA** compliance
+- **Semantic HTML** structure
+- **Screen reader** friendly
+- **Social media** meta tags
+- **Multilingual SEO** (English/Korean)
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit changes (`git commit -m 'Add amazing feature'`)
+4. Push to branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📞 Contact
+
+**Hephzisoft Foundation**
+- **Email**: info@hephzisoftfoundation.org
+- **Location**: Seoul, South Korea
+- **Website**: [Coming Soon]
+
+---
+
+*Built with ❤️ for youth empowerment and cultural bridge-building*
