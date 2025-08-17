@@ -1,5 +1,5 @@
-/// <reference path="../../worker-configuration.d.ts" />
 import { Hono } from "hono";
+import "../../worker-configuration";
 const app = new Hono<{ Bindings: Env }>();
 
 app.get("/api/", (c) => c.json({ name: "Cloudflare" }));
