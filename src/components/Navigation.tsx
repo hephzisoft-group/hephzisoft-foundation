@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "./ui/button";
-import logo from "@/assets/logo.png";
+import { useLanguage } from "../contexts/LanguageContext";
+import LanguageToggle from "./LanguageToggle";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,80 +18,93 @@ const Navigation = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const getNavPath = (path: string) => {
+    return language === 'kr' ? `/kr${path}` : path;
+  };
+
   const navItems = [
-    { name: "Home", href: "/", korean: "홈" },
-    { name: "Our Story", href: "/our-story", korean: "우리 이야기" },
-    { name: "Programs", href: "/programs", korean: "프로그램" },
-    { name: "Get Involved", href: "/get-involved", korean: "참여하기" },
-    { name: "Blog", href: "/blog", korean: "블로그" },
-    { name: "Contact", href: "/contact", korean: "연락처" },
+    { key: 'nav.home', href: "/" },
+    { key: 'nav.ourStory', href: "/our-story" },
+    { key: 'nav.programs', href: "/programs" },
+    { key: 'nav.getInvolved', href: "/get-involved" },
+    { key: 'nav.blog', href: "/blog" },
+    { key: 'nav.contact', href: "/contact" },
   ];
 
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/95 backdrop-blur-sm shadow-lg hanok-border"
+          ? "bg-white/95 backdrop-blur-sm shadow-lg border-b border-main/10"
           : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-hope-blue to-emerald-growth rounded-full flex items-center justify-center">
-              {/* Phoenix/Lotus logo placeholder - you can replace with actual SVG */}
-              <div className="h-20 text-white rounded-lg flex items-center justify-center text-lg font-bold">
-                <img
-                  src={logo}
-                  alt="Hephzisoft Foundation logo"
-                  className="object-fill h-10 w-10 rounded-full "
-                />
+          <Link to={getNavPath('/')} className="flex items-center space-x-3 group">
+            <div className="w-10 h-10 bg-gradient-to-br from-accent to-main rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
+              <div className="w-6 h-6 text-white flex items-center justify-center text-lg font-bold">
+                🐦
               </div>
             </div>
             <div>
-              <div className="font-playfair-display font-bold text-lg text-charcoal-gray">
-                Hephzisoft Foundation
+              <div className="font-poppins font-bold text-lg text-main">
+                Hephzisoft
+              </div>
+              <div className={`text-xs text-accent ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
+                {t('footer.tagline')}
               </div>
             </div>
           </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`group relative px-3 py-2 text-sm font-medium transition-colors ${
-                  location.pathname === item.href
-                    ? "text-hope-blue"
-                    : "text-charcoal-gray hover:text-hope-blue"
-                }`}
-              >
-                <span className="font-playfair-display">{item.name}</span>
-
-                {location.pathname === item.href && (
-                  <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-hope-blue to-emerald-growth rounded-full"></div>
-                )}
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const itemPath = getNavPath(item.href);
+              const isActive = location.pathname === itemPath || (item.href === '/' && location.pathname === '/kr');
+              return (
+                <Link
+                  key={item.key}
+                  to={itemPath}
+                  className={`group relative px-3 py-2 text-sm font-medium transition-colors ${
+                    isActive
+                      ? "text-accent"
+                      : "text-main hover:text-accent"
+                  }`}
+                >
+                  <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                    {t(item.key)}
+                  </span>
+                  {isActive && (
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-full"></div>
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
-          {/* CTA Button */}
+          {/* CTA Button and Language Toggle */}
           <div className="hidden md:flex items-center space-x-4">
+            <LanguageToggle />
             <Button variant="outline" size="sm">
-              <span className="font-playfair-display">Donate</span>
+              <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                {t('getInvolved.donate')}
+              </span>
             </Button>
-            <Button variant="default" size="sm">
-              <span className="font-playfair-display">Join Us</span>
+            <Button variant="cta" size="sm">
+              <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                {t('common.joinUs')}
+              </span>
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="md:hidden flex items-center space-x-2">
+            <LanguageToggle />
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-charcoal-gray hover:text-hope-blue transition-colors"
+              className="inline-flex items-center justify-center p-2 rounded-md text-main hover:text-accent transition-colors"
             >
               <svg
                 className="h-6 w-6"
@@ -120,31 +135,38 @@ const Navigation = () => {
 
       {/* Mobile Navigation */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-hope-blue/20">
+        <div className="md:hidden bg-white/95 backdrop-blur-sm border-t border-main/20">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            {navItems.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                  location.pathname === item.href
-                    ? "text-hope-blue bg-hope-blue/10"
-                    : "text-charcoal-gray hover:text-hope-blue hover:bg-hope-blue/5"
-                }`}
-              >
-                <div className="font-playfair-display">{item.name}</div>
-                <div className="text-sm font-noto-serif-kr text-soft-orchid/60">
-                  {item.korean}
-                </div>
-              </Link>
-            ))}
+            {navItems.map((item) => {
+              const itemPath = getNavPath(item.href);
+              const isActive = location.pathname === itemPath || (item.href === '/' && location.pathname === '/kr');
+              return (
+                <Link
+                  key={item.key}
+                  to={itemPath}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                    isActive
+                      ? "text-accent bg-accent/10"
+                      : "text-main hover:text-accent hover:bg-accent/5"
+                  }`}
+                >
+                  <div className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                    {t(item.key)}
+                  </div>
+                </Link>
+              );
+            })}
             <div className="flex space-x-2 px-3 pt-4">
               <Button variant="outline" size="sm" className="flex-1">
-                Donate
+                <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                  {t('getInvolved.donate')}
+                </span>
               </Button>
-              <Button variant="default" size="sm" className="flex-1">
-                Join Us
+              <Button variant="cta" size="sm" className="flex-1">
+                <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                  {t('common.joinUs')}
+                </span>
               </Button>
             </div>
           </div>
