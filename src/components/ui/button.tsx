@@ -23,7 +23,7 @@ const buttonVariants = cva(
         cta: "bg-accent text-main hover:bg-accent/90 hover:shadow-lg hover:-translate-y-1 font-semibold",
         // Korean variant with appropriate styling
         korean:
-          "bg-main text-white hover:bg-main/90 hover:shadow-md hover:-translate-y-0.5 font-noto-sans-kr",
+          "bg-main text-white hover:bg-main/90 hover:shadow-md hover:-translate-y-0.5 font-noto-serif-kr",
       },
       size: {
         default: "h-10 px-4 py-2",

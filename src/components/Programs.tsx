@@ -278,7 +278,7 @@ const Programs = () => {
             당신의 변화의 여정을 시작해보세요
           </p>
           <div className="flex flex-col justify-center gap-4 sm:flex-row">
-            <Button variant="hope" size="lg">
+            <Button variant="default" size="lg">
               Apply for Programs
             </Button>
             <Button variant="outline" size="lg">

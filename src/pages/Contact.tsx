@@ -45,7 +45,7 @@ const Contact = () => {
                   placeholder="Message"
                   className="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-hope-blue focus:border-transparent"
                 />
-                <Button variant="hope" size="lg" className="w-full">
+                <Button variant="default" size="lg" className="w-full">
                   Send Message
                 </Button>
               </form>

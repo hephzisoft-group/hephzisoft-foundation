@@ -1,20 +1,9 @@
-/* ==========================================================================
-   1. IMPORTS
-   ========================================================================== */
-
-/* Import external fonts first */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700;900&family=Noto+Sans+KR:wght@400;500;700;900&family=Noto+Serif+KR:wght@400;500;700;900&display=swap");
-
-/* Import Tailwind CSS v4 */
-@import "tailwindcss";
-
-
-/* ==========================================================================
-   2. BASE LAYER & THEME VARIABLES (Shadcn UI)
-   ========================================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Noto+Sans+KR:wght@100..900&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 @layer base {
-  /* Default Light Theme Variables */
   :root {
     --background: 210 20% 98%;
     --foreground: 222.2 84% 4.9%;
@@ -38,30 +27,30 @@
     --radius: 0.75rem;
   }
 
-  /* Your Custom Dark Theme using your brand colors */
   .dark {
-    --background: 228 50% 10%;
+    --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 228 50% 13.5%;
+    --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
-    --popover: 228 50% 10%;
+    --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 228 50% 13.5%;
-    --secondary: 217 33% 25%;
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 84% 4.9%;
+    --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217 33% 25%;
+    --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 45 100% 51.4%;
-    --accent-foreground: 228 50% 13.5%;
-    --destructive: 0 84.2% 60.2%;
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217 33% 25%;
-    --input: 217 33% 25%;
-    --ring: 45 100% 51.4%;
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 94.1%;
   }
+}
 
-  /* Base element styles */
+@layer base {
   * {
     @apply border-border;
   }
@@ -72,18 +61,14 @@
   }
 }
 
-
-/* ==========================================================================
-   3. CUSTOM COMPONENT CLASSES
-   ========================================================================== */
-
+/* Korean minimalism inspired styles */
 @layer components {
   .korean-shadow {
     box-shadow: 0 4px 20px -4px rgba(166, 214, 242, 0.15);
   }
 
   .hanok-border {
-    border-top: 3px solid inherit;
+    border-top: 3px solid theme("colors.inherit");
     position: relative;
   }
 
@@ -95,55 +80,7 @@
     transform: translateX(-50%);
     width: 60px;
     height: 4px;
-    background: currentColor;
+    background: theme("colors.current");
     border-radius: 2px;
-  }
-}
-
-
-/* ==========================================================================
-   4. TAILWIND THEME EXTENSIONS
-   ========================================================================== */
-
-@theme {
-  /* Custom Colors - creates utilities like `bg-accent-brand`, `text-main-brand` */
-  --color-accent-brand: #FFC107;
-  --color-main-brand: #0f1432;
-  --color-white: #ffffff;
-  --color-gray-50: #f9fafb;
-  --color-gray-100: #f3f4f6;
-  --color-gray-200: #e5e7eb;
-  --color-gray-300: #d1d5db;
-  --color-gray-400: #9ca3af;
-  --color-gray-500: #6b7280;
-  --color-gray-600: #4b5563;
-  --color-gray-700: #374151;
-  --color-gray-800: #1f2937;
-  --color-gray-900: #111827;
-
-  /* Custom Font Families - creates `font-poppins`, `font-noto-sans-kr`, etc. */
-  --font-poppins: 'Poppins', 'sans-serif';
-  --font-noto-sans-kr: 'Noto Sans KR', 'sans-serif';
-  --font-noto-serif-kr: 'Noto Serif KR', 'serif';
-  --font-sans: 'Poppins', 'sans-serif'; /* Overrides the default sans font */
-
-  /* Custom Border Radius - creates `rounded-lg`, `rounded-md`, `rounded-sm` */
-  --radius-lg: var(--radius);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-sm: calc(var(--radius) - 4px);
-
-  /* Custom Animations - creates `animate-fade-in`, `animate-fade-in-up` */
-  --animate-fade-in: fadeIn 0.6s ease-out;
-  --animate-fade-in-up: fadeInUp 0.8s ease-out;
-
-  /* Custom Keyframes */
-  @keyframes fadeIn {
-    '0%': { opacity: '0' },
-    '100%': { opacity: '1' },
-  }
-
-  @keyframes fadeInUp {
-    '0%': { transform: 'translateY(20px)', opacity: '0' },
-    '100%': { transform: 'translateY(0)', opacity: '1' },
   }
 }

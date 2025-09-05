@@ -1,11 +1,11 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
-
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import OurStory from "./pages/OurStory";
 import Programs from "./pages/Programs";
+import "./index.css";
 import GetInvolved from "./pages/GetInvolved";
 import { LanguageProvider } from "./contexts/LanguageContext";
 

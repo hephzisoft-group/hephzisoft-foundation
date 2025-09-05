@@ -19,16 +19,16 @@ const Navigation = () => {
   }, []);
 
   const getNavPath = (path: string) => {
-    return language === 'kr' ? `/kr${path}` : path;
+    return language === "kr" ? `/kr${path}` : path;
   };
 
   const navItems = [
-    { key: 'nav.home', href: "/" },
-    { key: 'nav.ourStory', href: "/our-story" },
-    { key: 'nav.programs', href: "/programs" },
-    { key: 'nav.getInvolved', href: "/get-involved" },
-    { key: 'nav.blog', href: "/blog" },
-    { key: 'nav.contact', href: "/contact" },
+    { key: "nav.home", href: "/" },
+    { key: "nav.ourStory", href: "/our-story" },
+    { key: "nav.programs", href: "/programs" },
+    { key: "nav.getInvolved", href: "/get-involved" },
+    { key: "nav.blog", href: "/blog" },
+    { key: "nav.contact", href: "/contact" },
   ];
 
   return (
@@ -42,7 +42,10 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link to={getNavPath('/')} className="flex items-center space-x-3 group">
+          <Link
+            to={getNavPath("/")}
+            className="flex items-center space-x-3 group"
+          >
             <div className="w-10 h-10 bg-gradient-to-br from-accent to-main rounded-full flex items-center justify-center transition-transform group-hover:scale-105">
               <div className="w-6 h-6 text-white flex items-center justify-center text-lg font-bold">
                 🐦
@@ -52,8 +55,12 @@ const Navigation = () => {
               <div className="font-poppins font-bold text-lg text-main">
                 Hephzisoft
               </div>
-              <div className={`text-xs text-accent ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                {t('footer.tagline')}
+              <div
+                className={`text-xs text-accent ${
+                  language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                }`}
+              >
+                {t("footer.tagline")}
               </div>
             </div>
           </Link>
@@ -62,18 +69,22 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {
               const itemPath = getNavPath(item.href);
-              const isActive = location.pathname === itemPath || (item.href === '/' && location.pathname === '/kr');
+              const isActive =
+                location.pathname === itemPath ||
+                (item.href === "/" && location.pathname === "/kr");
               return (
                 <Link
                   key={item.key}
                   to={itemPath}
                   className={`group relative px-3 py-2 text-sm font-medium transition-colors ${
-                    isActive
-                      ? "text-accent"
-                      : "text-main hover:text-accent"
+                    isActive ? "text-accent" : "text-main hover:text-accent"
                   }`}
                 >
-                  <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                  <span
+                    className={
+                      language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                    }
+                  >
                     {t(item.key)}
                   </span>
                   {isActive && (
@@ -88,13 +99,21 @@ const Navigation = () => {
           <div className="hidden md:flex items-center space-x-4">
             <LanguageToggle />
             <Button variant="outline" size="sm">
-              <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                {t('getInvolved.donate')}
+              <span
+                className={
+                  language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                }
+              >
+                {t("getInvolved.donate")}
               </span>
             </Button>
             <Button variant="cta" size="sm">
-              <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                {t('common.joinUs')}
+              <span
+                className={
+                  language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                }
+              >
+                {t("common.joinUs")}
               </span>
             </Button>
           </div>
@@ -139,7 +158,9 @@ const Navigation = () => {
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item) => {
               const itemPath = getNavPath(item.href);
-              const isActive = location.pathname === itemPath || (item.href === '/' && location.pathname === '/kr');
+              const isActive =
+                location.pathname === itemPath ||
+                (item.href === "/" && location.pathname === "/kr");
               return (
                 <Link
                   key={item.key}
@@ -151,7 +172,11 @@ const Navigation = () => {
                       : "text-main hover:text-accent hover:bg-accent/5"
                   }`}
                 >
-                  <div className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
+                  <div
+                    className={
+                      language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                    }
+                  >
                     {t(item.key)}
                   </div>
                 </Link>
@@ -159,13 +184,21 @@ const Navigation = () => {
             })}
             <div className="flex space-x-2 px-3 pt-4">
               <Button variant="outline" size="sm" className="flex-1">
-                <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                  {t('getInvolved.donate')}
+                <span
+                  className={
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }
+                >
+                  {t("getInvolved.donate")}
                 </span>
               </Button>
               <Button variant="cta" size="sm" className="flex-1">
-                <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                  {t('common.joinUs')}
+                <span
+                  className={
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }
+                >
+                  {t("common.joinUs")}
                 </span>
               </Button>
             </div>

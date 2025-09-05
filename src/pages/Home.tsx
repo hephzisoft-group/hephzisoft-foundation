@@ -11,7 +11,7 @@ import {
 import { useLanguage } from "../contexts/LanguageContext";
 
 const Home = () => {
-  const { language, t } = useLanguage();
+  const { language } = useLanguage();
   const impactStats = [
     {
       number: "500+",
@@ -80,28 +80,43 @@ const Home = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
             <div className="mb-4">
-              <span className={`inline-block px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-semibold border border-accent/20 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                {language === 'kr' ? '우리의 사명' : 'Our Mission'}
+              <span
+                className={`inline-block px-4 py-2 bg-accent/10 rounded-full text-accent text-sm font-semibold border border-accent/20 ${
+                  language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                }`}
+              >
+                {language === "kr" ? "우리의 사명" : "Our Mission"}
               </span>
             </div>
-            <h2 className={`text-4xl lg:text-5xl font-bold mb-6 text-main ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' ? (
-                <span>우리의 <span className="text-accent">핵심 영역</span></span>
+            <h2
+              className={`text-4xl lg:text-5xl font-bold mb-6 text-main ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr" ? (
+                <span>
+                  우리의 <span className="text-accent">핵심 영역</span>
+                </span>
               ) : (
-                <span>Our <span className="text-accent">Mission Areas</span></span>
+                <span>
+                  Our <span className="text-accent">Mission Areas</span>
+                </span>
               )}
             </h2>
-            <p className={`text-xl text-main/70 max-w-3xl mx-auto ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' 
-                ? '고립의 근본 원인을 해결하고 지속 가능한 성공의 길을 만드는 총체적 개발에 집중합니다.'
-                : 'We focus on holistic development that addresses the root causes of isolation while building sustainable pathways to success.'
-              }
+            <p
+              className={`text-xl text-main/70 max-w-3xl mx-auto ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr"
+                ? "고립의 근본 원인을 해결하고 지속 가능한 성공의 길을 만드는 총체적 개발에 집중합니다."
+                : "We focus on holistic development that addresses the root causes of isolation while building sustainable pathways to success."}
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {missionAreas.map((area, index) => (
-            <Card
+              <Card
                 key={index}
                 className="text-center hover:shadow-xl transition-all duration-300 group animate-fade-in-up border border-accent/10"
                 style={{ animationDelay: `${index * 0.1}s` }}
@@ -110,12 +125,20 @@ const Home = () => {
                   <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">
                     {area.icon}
                   </div>
-                  <CardTitle className={`text-lg mb-2 text-main ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                    {language === 'kr' ? area.korean : area.title}
+                  <CardTitle
+                    className={`text-lg mb-2 text-main ${
+                      language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                    }`}
+                  >
+                    {language === "kr" ? area.korean : area.title}
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <CardDescription className={`text-sm leading-relaxed text-main/70 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
+                  <CardDescription
+                    className={`text-sm leading-relaxed text-main/70 ${
+                      language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                    }`}
+                  >
                     {area.description}
                   </CardDescription>
                 </CardContent>
@@ -132,15 +155,29 @@ const Home = () => {
       <section className="py-20 bg-gradient-to-r from-main via-main/95 to-main text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-fade-in">
-            <h2 className={`text-4xl lg:text-5xl font-bold mb-6 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' ? (
-                <span>우리의 <span className="text-accent">영향력</span></span>
+            <h2
+              className={`text-4xl lg:text-5xl font-bold mb-6 ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr" ? (
+                <span>
+                  우리의 <span className="text-accent">영향력</span>
+                </span>
               ) : (
-                <span>Our <span className="text-accent">Impact</span></span>
+                <span>
+                  Our <span className="text-accent">Impact</span>
+                </span>
               )}
             </h2>
-            <p className={`text-xl text-white/80 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' ? '실제 변화를 만들어가고 있습니다' : 'Making real change happen'}
+            <p
+              className={`text-xl text-white/80 ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr"
+                ? "실제 변화를 만들어가고 있습니다"
+                : "Making real change happen"}
             </p>
           </div>
 
@@ -151,13 +188,25 @@ const Home = () => {
                 className="text-center animate-fade-in"
                 style={{ animationDelay: `${index * 0.2}s` }}
               >
-                <div className={`text-5xl lg:text-6xl font-bold text-accent mb-4 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
+                <div
+                  className={`text-5xl lg:text-6xl font-bold text-accent mb-4 ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
                   {stat.number}
                 </div>
-                <div className={`text-lg font-semibold mb-2 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                  {language === 'kr' ? stat.korean : stat.label}
+                <div
+                  className={`text-lg font-semibold mb-2 ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
+                  {language === "kr" ? stat.korean : stat.label}
                 </div>
-                <div className={`text-sm text-white/70 leading-relaxed ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
+                <div
+                  className={`text-sm text-white/70 leading-relaxed ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
                   {stat.description}
                 </div>
               </div>
@@ -171,21 +220,39 @@ const Home = () => {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-8 animate-fade-in">
             <div className="text-6xl mb-6">🌱</div>
-            <h2 className={`text-4xl lg:text-5xl font-bold mb-6 text-main ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' ? (
-                <span>변화의 <span className="text-accent">동반자</span>가 되어주세요</span>
+            <h2
+              className={`text-4xl lg:text-5xl font-bold mb-6 text-main ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr" ? (
+                <span>
+                  변화의 <span className="text-accent">동반자</span>가
+                  되어주세요
+                </span>
               ) : (
-                <span>Be Part of the <span className="text-accent">Change</span></span>
+                <span>
+                  Be Part of the <span className="text-accent">Change</span>
+                </span>
               )}
             </h2>
-            <p className={`text-xl text-main/70 mb-8 leading-relaxed ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' 
-                ? '변화를 추구하는 청년, 지도할 준비가 된 멘토, 또는 변화를 만들고 싶은 후원자 - 모두를 위한 자리가 우리 커뮤니티에 있습니다.'
-                : "Whether you're a youth seeking transformation, a mentor ready to guide, or a supporter wanting to make a difference – there's a place for you in our community."
-              }
+            <p
+              className={`text-xl text-main/70 mb-8 leading-relaxed ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr"
+                ? "변화를 추구하는 청년, 지도할 준비가 된 멘토, 또는 변화를 만들고 싶은 후원자 - 모두를 위한 자리가 우리 커뮤니티에 있습니다."
+                : "Whether you're a youth seeking transformation, a mentor ready to guide, or a supporter wanting to make a difference – there's a place for you in our community."}
             </p>
-            <div className={`text-accent mb-12 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' ? '함께 만들어가는 희망의 여정' : 'A journey of hope we create together'}
+            <div
+              className={`text-accent mb-12 ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr"
+                ? "함께 만들어가는 희망의 여정"
+                : "A journey of hope we create together"}
             </div>
           </div>
 
@@ -193,18 +260,29 @@ const Home = () => {
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-200 border border-accent/10 hover:border-accent/20">
               <CardContent className="space-y-4">
                 <div className="text-4xl">🚀</div>
-                <h3 className={`font-semibold text-main ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                  {language === 'kr' ? '청년들을 위해' : 'For Youth'}
+                <h3
+                  className={`font-semibold text-main ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
+                  {language === "kr" ? "청년들을 위해" : "For Youth"}
                 </h3>
-                <p className={`text-sm text-main/70 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                  {language === 'kr' 
-                    ? '삶을 변화시킬 준비가 되었나요? 우리 프로그램에 참여하고 여정을 시작하세요.'
-                    : "Ready to transform your life? Join our programs and start your journey."
-                  }
+                <p
+                  className={`text-sm text-main/70 ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
+                  {language === "kr"
+                    ? "삶을 변화시킬 준비가 되었나요? 우리 프로그램에 참여하고 여정을 시작하세요."
+                    : "Ready to transform your life? Join our programs and start your journey."}
                 </p>
                 <Button variant="cta" className="w-full">
-                  <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                    {language === 'kr' ? '지원하기' : 'Apply Now'}
+                  <span
+                    className={
+                      language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                    }
+                  >
+                    {language === "kr" ? "지원하기" : "Apply Now"}
                   </span>
                 </Button>
               </CardContent>
@@ -213,18 +291,29 @@ const Home = () => {
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-200 border border-accent/10 hover:border-accent/20">
               <CardContent className="space-y-4">
                 <div className="text-4xl">🤝</div>
-                <h3 className={`font-semibold text-main ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                  {language === 'kr' ? '멘토들을 위해' : 'For Mentors'}
+                <h3
+                  className={`font-semibold text-main ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
+                  {language === "kr" ? "멘토들을 위해" : "For Mentors"}
                 </h3>
-                <p className={`text-sm text-main/70 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                  {language === 'kr' 
-                    ? '경험을 나누고 차세대 리더들을 지도해주세요.'
-                    : "Share your experience and guide the next generation of leaders."
-                  }
+                <p
+                  className={`text-sm text-main/70 ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
+                  {language === "kr"
+                    ? "경험을 나누고 차세대 리더들을 지도해주세요."
+                    : "Share your experience and guide the next generation of leaders."}
                 </p>
                 <Button variant="outline" className="w-full">
-                  <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                    {language === 'kr' ? '자원봉사' : 'Volunteer'}
+                  <span
+                    className={
+                      language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                    }
+                  >
+                    {language === "kr" ? "자원봉사" : "Volunteer"}
                   </span>
                 </Button>
               </CardContent>
@@ -233,18 +322,29 @@ const Home = () => {
             <Card className="text-center p-6 hover:shadow-lg transition-all duration-200 border border-accent/10 hover:border-accent/20">
               <CardContent className="space-y-4">
                 <div className="text-4xl">💝</div>
-                <h3 className={`font-semibold text-main ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                  {language === 'kr' ? '후원자들을 위해' : 'For Supporters'}
+                <h3
+                  className={`font-semibold text-main ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
+                  {language === "kr" ? "후원자들을 위해" : "For Supporters"}
                 </h3>
-                <p className={`text-sm text-main/70 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-                  {language === 'kr' 
-                    ? '더 많은 청년들에게 다가가고 글로벌 영향력을 확장할 수 있도록 도와주세요.'
-                    : "Help us reach more youth and expand our global impact."
-                  }
+                <p
+                  className={`text-sm text-main/70 ${
+                    language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                  }`}
+                >
+                  {language === "kr"
+                    ? "더 많은 청년들에게 다가가고 글로벌 영향력을 확장할 수 있도록 도와주세요."
+                    : "Help us reach more youth and expand our global impact."}
                 </p>
                 <Button variant="secondary" className="w-full">
-                  <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                    {language === 'kr' ? '후원하기' : 'Donate'}
+                  <span
+                    className={
+                      language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                    }
+                  >
+                    {language === "kr" ? "후원하기" : "Donate"}
                   </span>
                 </Button>
               </CardContent>
@@ -252,15 +352,22 @@ const Home = () => {
           </div>
 
           <div className="text-center">
-            <p className={`text-sm text-main/60 mb-6 ${language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}`}>
-              {language === 'kr' 
-                ? '참여 방법에 대한 질문이 있으신가요? 언제든지 도와드리겠습니다.'
-                : "Questions about how to get involved? We're here to help."
-              }
+            <p
+              className={`text-sm text-main/60 mb-6 ${
+                language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+              }`}
+            >
+              {language === "kr"
+                ? "참여 방법에 대한 질문이 있으신가요? 언제든지 도와드리겠습니다."
+                : "Questions about how to get involved? We're here to help."}
             </p>
             <Button variant="outline" size="lg">
-              <span className={language === 'kr' ? 'font-noto-sans-kr' : 'font-poppins'}>
-                {language === 'kr' ? '우리 팀에 연락하기' : 'Contact Our Team'}
+              <span
+                className={
+                  language === "kr" ? "font-noto-serif-kr" : "font-poppins"
+                }
+              >
+                {language === "kr" ? "우리 팀에 연락하기" : "Contact Our Team"}
               </span>
             </Button>
           </div>
